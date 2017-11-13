@@ -1,0 +1,91 @@
+.left, .right {
+        float:left;
+        height:150vh;
+    }
+
+.left {
+        
+        background:black;
+        display: inline-block;
+        white-space: nowrap;
+        width: 45px;
+		transition: width 1s ;
+		padding-top: 10px;
+        padding-right: 10px;
+        padding-bottom: auto;
+    }
+
+.right {
+        background:black;
+        width: 350px;
+        transition: width 1s;
+        border-style:solid;
+        border-color:#ccc;
+        border-width:1px;
+    }    
+
+.left:hover {
+        width: 150px;
+    }    
+    
+.item:hover {
+        background-color:#ccc;
+        }
+        
+.left .glyphicon  {
+        margin:15px;
+        width:20px;
+        color:green;
+    }
+
+    .left .fa{
+        margin:15px;
+        width:20px;
+        color:green;   
+    }
+    
+    
+.right .glyphicon {
+        color:#a9a9a9;
+    }
+    
+.item {
+        height:50px;
+        overflow:hidden;
+        color:#fff;
+    }
+    
+.navbar li a{
+
+                color: whitesmoke !important;
+                background-color: black;
+            }
+
+    .navbar .glyphicon{
+       
+        color:green;
+
+    }
+
+
+.navbar li a:hover{
+    background-color:#ccc;
+    }
+.navbar-toggle .icon-bar{
+background-color: whitesmoke !important;
+}
+.container-fluid{
+    padding-left: 00px;
+}
+
+.item a{
+    color: whitesmoke !important;
+    text-decoration-line: none;
+}
+
+.navbar ul dropdown-menu{
+background-color: black;
+margin-top: auto;
+
+}
+

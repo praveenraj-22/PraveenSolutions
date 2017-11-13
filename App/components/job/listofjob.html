@@ -1,0 +1,39 @@
+<div class="container">
+	<div class="row">
+		<h1>List Of Jobs</h1>
+       
+            <div class="container">
+             
+              
+                    <div class="navbar-form navbar-right">
+                        Search <input type="text" ng-model="searchText.jobTitle" class="form-control" />
+      
+                </div>
+                
+            </div>
+      
+        <div class="table-responsive col-md-12">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Job Title</th>
+                        <th>Company Name</th>
+                        <th>Location</th>
+                        <th>Posted On</th>
+                        <th>Years Of Experience</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="job in jobs | filter:searchText">
+                    <td><a href="#!/getjob/{{job.id}}">{{job.jobTitle}}</a></td>
+                    <td>{{job.companyName}}</td>
+                    <td>{{job.location}}</td>
+                    <td>{{job.postedOn | date:'MM/dd/yyyy'}}</td>
+                    <td>{{job.yearOfExperience}}</td>
+                    </tr>
+                 </tbody>
+            </table>
+        </div>
+        
+	</div>
+</div>

@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-6 col-centered">
+            <div class="panel panel-warning">
+                <div class="panel-heading">
+                    <h1>
+                        <center>POST</center>
+                    </h1>
+                </div>
+                <form>
+                    <div class="panel-body"style="max-height: 250;">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="glyphicon glyphicon-user"></i></span>
+                                <input type="text" name="blogtitle"  placeholder="Title" ng-model="blogPost.blogtitle" class="form-control">
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="glyphicon glyphicon-comment"></i></span>
+                                <textarea name="description" rows="6" placeholder="Description" ng-model="blogPost.description" class="form-control" type="text"></textarea>
+                            </div>
+                        </div>
+                        <div>
+                            <button input type="submit" ng-click="saveBlogPost()" class="btn btn-info pull-right">Post 
+                            <span class="glyphicon glyphicon-send"></span></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

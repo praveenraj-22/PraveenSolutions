@@ -1,0 +1,184 @@
+<html>
+
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- bootstrap dependency -->
+  <link rel="stylesheet" href="resources/font/css/font-awesome.min.css"></link>
+  
+  <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css"></link>
+  <script src="resources/jquery/jquery-3.2.1.js"></script>
+  <script src="resources/bootstrap/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="resources/bootstrap/css/custom.css"></link>
+  <link rel="stylesheet" href="components/blogpost/blogpost.css">
+  <link rel="stylesheet" href="components/register/register.css">
+  <link rel="stylesheet" href="components/login/login.css">
+  <link rel="stylesheet" href="components/chat/chat.css">
+
+    
+  <script src="resources/sockjs/sockjs/sockjs.js"></script>
+  <script src="resources/stomp/stomp/dist/stomp.js"></script>
+     
+  <!-- Angular js dependency -->
+
+  <script src="resources/angular/angular.js"></script>
+  <script src="resources/angular/angularroute.js"></script>
+  <script src="resources/angular/angularcookie.js"></script>
+  
+
+  <!--Angular js app file -->
+  <script src="module.js"></script>
+  <script src="route.js"></script>
+
+  <!--register -->
+  <script src="components/register/RegisterController.js"></script>
+  <script src="components/register/registercontroller1.js"></script>
+  <script src="components/register/RegisterService.js"></script>
+
+
+<!--login -->
+<script src="components/login/LoginController.js"></script>
+<script src="components/login/LoginService.js"></script>
+
+<!--BlogPost -->
+<script src="components/blogpost/BlogPostController.js"></script>
+<script src="components/blogpost/blogpostcontroller1.js"></script>
+<script src="components/blogpost/blogdetailcontroller.js"></script>
+
+<script src="components/blogpost/BlogPostService.js"></script>
+
+<!--job -->
+<script src="components/job/jobController.js"></script>
+<script src="components/job/jobcontroller1.js"></script>
+<script src="components/job/jobService.js"></script>
+
+<script src="components/friend/FriendController.js"></script>
+<script src="components/friend/FriendService.js"></script>
+
+
+
+<script src="components/friend/FriendController1.js"></script>
+<script src="components/friend/Friendservice1.js"></script>
+<!--home -->
+<script src="components/home/homecontroller.js"></script>
+<script src="components/profilepic/piccontroller.js"></script>
+
+
+
+  <!-- Chat module -->
+  <script src="components/chat/ChatController.js"></script>
+  <script src="components/chat/ChatService.js"></script> 
+</head>
+
+
+<body ng-app="company">
+
+
+
+  <div class="navbar navbar-light navbar-fixed-top"  style="background-color: black"  role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar">
+        
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+        <a class="logo" href="#"><img src="resources/image/ab2.jpg" height="55" width="155"></a>
+
+
+      </div>
+      <div class="navbar-collapse collapse" id="mynavbar">
+          <ul class="nav navbar-nav navbar-right">
+             
+					<li class="dropdown">
+            <a href="" class="dropdown-toggle"
+						data-toggle="dropdown" ng-show="currentUser.username"> 
+						<span class="glyphicon glyphicon-globe">
+						<span class="rw-number-notification"  ng-if="approvalStatus.length>0" >{{approvalStatus.length}}</span></span></a> 
+						</a>
+						<ul class="dropdown-menu">
+						    
+							<li ng-repeat="blogPostStatus in approvalStatus">
+							<a href="#!/approvalstatus/{{blogPostStatus.id}}">{{blogPostStatus.blogTitle}} is 
+							      <span ng-if="blogPostStatus.approved">Approved</span>
+							      <span ng-if="!blogPostStatus.approved">Rejected</span></a></li>
+							
+            </ul>
+          </li>
+      
+          <li><a href="#!/chat" ng-show="currentUser.username">chat </a></li>
+            
+				 <li class="dropdown"><a href="" class="dropdown-toggle"
+          data-toggle="dropdown" ng-show="currentUser.username"> Friend <b
+            class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#!/suggestedusers">List of suggested users</a></li>
+            <li><a href="#!/pendingrequests">Pending Requests</a></li>
+            <li><a href="#!/getfriends">Friends({{noOfFriends}})</a></li>
+            <li><a></a></li>
+          </ul></li>
+          <li><a href="!#/profilepic" ng-show="currentUser.username">
+            <img src="http://localhost:8007/praveensolutions/resources/images/{{currentUser.username}}.jpg" alt="upload Picture" width="30px" height="30px" class="img-rounded">
+            </a></li>
+          
+              <li class="dropdown">
+                
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#" ><span class="glyphicon glyphicon-user"></span>User {{currentUser.username}}
+                <span class="caret"></span></a>   
+                <ul class="dropdown-menu">
+                  <li><a href="#!/login" ng-hide="currentUser.username"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                  <li><a href="#!/editprofile"  ng-show="currentUser.username">Edit-Profile</a></li>
+                  <li><a href="#!/uploadprofilepic" ng-show="currentUser.username">Pic</a></li>
+			
+                  <li ng-if="currentUser.username!=null"><a href="" ng-click="logout()"  ng-show="currentUser.username">Logout</a></li>
+                </ul>
+              </li>
+
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+  </div>
+
+
+  <div class="left">
+
+    <div class="item">
+      <span class="glyphicon glyphicon-th-large"></span>
+    </div>
+
+    <div class="item active">
+      <a href="#!/home">
+      <span class="glyphicon glyphicon-home"></span> Home</a>
+    </div>
+
+    
+    <div class="item">
+      <a href="#!/Register">
+      <span class="glyphicon glyphicon-tent"></span> Register</a>
+    </div>
+
+  
+
+    <div class="item">
+      <a href="#!/post" ng-show="currentUser.username">
+      <span class="fa fa-facebook"></span> Blog</a>
+    </div>
+
+    
+    <div class="item">
+        <a href="#!/job" ng-show="currentUser.username">
+        <span class="fa fa-industry"></span> Job</a>
+      </div>
+  </div>
+
+  <div class="ng-view"></div>
+
+
+  
+
+</body>
+
+</html>

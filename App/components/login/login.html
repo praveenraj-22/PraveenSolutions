@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-6 col-centered">
+                <div class="panel panel-info">
+            <div class="panel-heading">
+                <h1>
+                    <center>Login</center>
+                </h1>
+            </div>
+            <div class="panel-body" style="max-height: 250;">
+
+                <!-- Login Form -->
+                <form>
+
+
+                    <div class="form-group">
+                        <label for="username"><span class="text-danger" style="margin-right:5px;">*</span>Username:</label>
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                    <i class="fa fa-id-badge"></i></span>
+                            <input type="text" name="username" ng-model="user.username" placeholder="username" class="form-control">
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password"><span class="text-danger" style="margin-right:5px;">*</span>Password:</label>
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="glyphicon glyphicon-lock"></i></span>
+                            <input type="password" name="password" ng-model="user.password" placeholder="password" class="form-control">
+
+                        </div>
+                    </div>
+
+                    <!-- Login Button -->
+                    <div>
+                        <input type="submit" ng-click="login()" value="Login" class="btn btn-info pull-right">
+
+                    </div>
+                </form>
+                <!-- End of Login Form -->
+                    <span style="color: red">{{loginFail.message}}</span>
+            </div>
+        </div>
+    </div>

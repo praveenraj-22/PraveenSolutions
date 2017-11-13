@@ -1,0 +1,48 @@
+<br>
+<br>
+<br>
+
+      
+
+
+
+
+
+
+
+
+                <div class="container">
+                        <div id="blog" class="row"> 
+                               
+                                 
+                                <div class="col-md-10 blogShort">
+                                    <h1>{{blogPost.blogtitle}}</h1>
+                                    <article><p>
+                                        {{blogPost.description}}
+                                        </p></article>
+                                        <span><strong>Created By: </strong>{{blogPost.postedBy.username}}</span><br>
+                                        <span><strong>Created On: </strong>{{blogPost.postedOn | date:'medium'}}</span>
+                                        <ul>
+                                                <br>
+                                                <b>Comments :</b>
+                                                <li  ng-repeat="blogComment in blogComments | orderBy:'time':'true'">
+                                                {{blogComment.commentText}}<br>
+                                                
+                                                <span >By: <strong>{{blogComment.commentedBy.username}}</strong></span>
+                                                <span>On:<strong>{{blogComment.commentedOn | date:'yyyy/MM/dd'}}</strong></span>
+                                                </li>
+                                                </ul>
+                                                     
+                                                
+
+                <form>
+                                <div class="form-group">
+                                <textarea rows="4" cols="20" ng-model="blogComment.commentText"></textarea>
+                                </div>
+                                <button class="btn btn-default" value="Post Comment" ng-click="addComment()">Post Comment</button>
+                                </form>
+                                
+                                </div>
+                                
+                                </div>
+                               

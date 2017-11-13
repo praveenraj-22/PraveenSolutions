@@ -1,0 +1,13 @@
+.panel > .panel-heading     {
+    background-color: black;
+    color: green;
+}
+
+.btn{
+    background-color: black;
+    color: green;
+}
+
+.btn:hover{
+    color: whitesmoke;
+}

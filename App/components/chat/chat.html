@@ -1,0 +1,55 @@
+
+  <div class="chatbox chatbox--tray chatbox--empty">
+    <div class="chatbox__title">
+      <h5><a href="">Chat Box</a></h5>
+      <button class="chatbox__title__tray">
+            <span></span>
+        </button>
+    </div>
+    <div ng-repeat="message in ChatCtrl.messages | orderBy:'time':true" class="message">
+      <table class="table">
+
+        <col width="30%">
+        <col width="70%">
+        <tr>
+          <td><img ng-src="http://localhost:8007/praveensolutions/resources/images/{{message.userId}}.jpg" alt="im" class="img-circle" width="40" height="40"></td>
+         <!-- <td><span ng-class="{self: message.self}">{{message.userId}}</span></td>-->
+          <td><span ng-class="{self: message.self}">{{message.userId}} --> {{message.message}}</span></td>
+        </tr>
+      </table>
+    </div>
+
+    <form novalidate class="chatbox__credentials" name="messageForm">
+      <div class="col-sm-9">
+        <div class="form-group">
+          <input type="text" placeholder=" Text here..." ng-model="ChatCtrl.message" size="100" class="form-control" id="inputName"
+            required>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <button ng-click="ChatCtrl.addMessage()" class="btn" style="bottom:0px"><span class = "glyphicon glyphicon-send"/></button>
+      </div>
+    </form>
+  </div>
+
+
+  <script>
+    (function ($) {
+      $(document).ready(function () {
+        var $chatbox = $('.chatbox'),
+          $chatboxTitle = $('.chatbox__title'),
+          $chatboxTitleClose = $('.chatbox__title__close'),
+          $chatboxCredentials = $('.chatbox__credentials');
+        $chatboxTitle.on('click', function () {
+          $chatbox.toggleClass('chatbox--tray');
+        });
+        $chatboxTitleClose.on('click', function (e) {
+          e.stopPropagation();
+          $chatbox.addClass('chatbox--closed');
+        });
+        $chatbox.on('transitionend', function () {
+          if ($chatbox.hasClass('chatbox--closed')) $chatbox.remove();
+        });
+      });
+    })(jQuery);
+</script>

@@ -1,0 +1,93 @@
+<div class="container">
+   
+<div class="row">
+    <div class="col-xs-6 col-centered">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h1>
+                    <center>Job Detail</center>
+                </h1>
+            </div>
+            <form>
+                <div class="panel-body" style="max-height: 450;">
+                    
+                        <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="fa fa-building"></i></span>
+                                    <input type="text" name="companyName" ng-model="job.companyName" placeholder="Company Name" class="form-control">
+        
+                                </div>
+                            </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="fa fa-black-tie"></i></span>
+                            <input type="text" name="jobTitle" ng-model="job.jobTitle" placeholder="Enter Job-Type" class="form-control"><!--user is the object that we created in DAO -->
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="fa fa-paragraph"></i>
+                            </span>
+                            <input type="text" name="jobDescription" ng-model="job.jobDescription" placeholder="Enter Jod-Description" class="form-control">
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                       
+                        <div class="input-group">
+                                
+                            <span class="input-group-addon">
+                                <i class="fa fa-id-badge"></i></span>
+                            <input type="number" name="yearOfExperience" ng-model="job.yearOfExperience" placeholder="Enter Year-Of-Experience" class="form-control">
+                            
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="fa fa-area-chart"></i></span>
+                            <input type="text" name="skillsRequired" ng-model="job.skillsRequired" placeholder="Enter Skills Required" class="form-control">
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                          
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="fa fa-inr"></i></span>
+                            <input type="number" name="salary" ng-model="job.salary" placeholder="Enter Salary" class="form-control">
+                            
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="fa fa-location-arrow"></i></span>
+                            <input type="text" name="location" ng-model="job.location" placeholder="Job location" class="form-control">
+
+                        </div>
+                    </div>
+
+
+<br>
+<br>
+                    <div>
+                        <input type="submit" ng-click="Savejob()" value="Post Job" class="btn pull-right"> 
+                        
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+</div>
